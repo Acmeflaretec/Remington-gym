@@ -268,8 +268,8 @@ https://www.tooplate.com/view/2119-gymso-fitness
   }
 
   .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   .navbar-brand {
@@ -368,7 +368,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   -----------------------------------------*/
 
   .hero {
-    background-image: url('../images/hero-bg.jpg');
+    background-image: url('../images/banner1.jpg');
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -752,3 +752,170 @@ https://www.tooplate.com/view/2119-gymso-fitness
 	overflow: hidden;
 }
 
+   
+
+
+
+
+
+
+h1 {
+  text-align: center;
+  margin: 3rem 0;
+}
+li {
+  list-style: none;
+}
+body {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.carousel {
+  position: relative;
+  height: 400px;
+  width: 500px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+}
+.carousel__images {
+  max-width: 500px;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel__track-container {
+  background: pink;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.carousel__track {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+.carousel__button:hover {
+  background-color: rgb(254, 215, 222);
+  border-radius: 20px;
+}
+
+.carousel__button--left {
+  left: -40px;
+}
+.carousel__button--right {
+  right: -40px;
+   transform: translateY(-50%) rotate(180deg)
+}
+.carousel__button img {
+  width: 25px;
+}
+.carousel__nav {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  gap: 1rem;
+}
+.carousel__indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.carousel__indicator.current-slide {
+  background: rgba(0, 0, 0, 0.9);
+}
+.is-hidden {
+  display: none;
+}
+
+
+
+
+
+.photo-wrapper {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.photo {
+  border-radius: 16px;
+  overflow: hidden;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+
+  & img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+  }
+
+  &::after {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      bottom: -1rem;
+      left: -16rem;
+      background: linear-gradient(90deg, transparent, white, transparent);
+      width: 16rem;
+      opacity: 0;
+      transform: rotate(6deg);
+  }
+
+  &:hover::after {
+      left: 100%;
+      opacity: 0.15;
+      transition: inset 1s;
+  }
+
+  &:hover {
+      transform: scale(1.1) !important;
+  }
+
+  &.even {
+      transform: rotate(2deg);
+  }
+
+  &:not(.even) {
+      transform: rotate(-2deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    height: 250px; /* Adjust height for smaller screens */
+    width: 300px;
+    margin: 0;
+  }
+}
